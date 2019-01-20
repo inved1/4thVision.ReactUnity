@@ -1,10 +1,10 @@
 import React from 'react';
 import {render} from "react-dom";
 
-import Demo from "./components/Demo";
+import UnityComponent from "./components/UnityComponent";
 
 
   
-render(<Demo />, document.getElementById("app"));
+render(<UnityComponent />, document.getElementById("app"));
 
 

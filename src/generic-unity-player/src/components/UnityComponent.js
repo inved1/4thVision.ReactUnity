@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Unity, { UnityContent } from "react-unity-webgl";
 
-export default class Demo extends Component {
+export default class UnityComponent extends Component {
   constructor(props) {
     super(props);
 
@@ -14,15 +14,17 @@ export default class Demo extends Component {
 
   }
 
+  onClickToggleRotation() {
+    console.log('toggle rot');
+    this.unityContent.send("Cube", "toggleRotation");
+  }
+
   render() {
     return (
-        <div>
-        <Unity unityContent={this.unityContent} />
-
-        </div>
-
-        //https://github.com/jeffreylanters/react-unity-webgl-test
-      
+      <div>
+        <button onClick={this.onClickToggleRotation.bind(this)}>{"ToggleRotation"}</button>
+        <Unity unityContent={this.unityContent} height='400' width='400' />
+       </div>
     );
   }
 }
